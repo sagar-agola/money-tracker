@@ -8,6 +8,7 @@ public class TransactionModel
     public string HashId { get; set; }
     public decimal Amount { get; set; }
     public DateTime TransactionDate { get; set; }
+    public string RelativeTransactionDate { get; set; }
     public string Category { get; set; }
     public string Description { get; set; }
 }

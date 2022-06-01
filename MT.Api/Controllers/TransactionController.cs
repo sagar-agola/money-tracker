@@ -56,6 +56,7 @@ public class TransactionController : ControllerBase
 
         foreach (TransactionModel item in response.Data.Data)
         {
+            item.RelativeTransactionDate = item.TransactionDate.ToRelativeTime();
             item.HashId = _hashids.Encode(item.Id);
             item.Id = 0;
         }
