@@ -5,14 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:MT.Client.WPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="560" Width="500"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
 
     <Window.DataContext>
         <viewModel:MainViewModel />
     </Window.DataContext>
 
-    <Grid>
-        <ContentControl Margin="10"
-                        Content="{Binding CurrentView}"/>
-    </Grid>
+    <Border BorderBrush="{StaticResource PrimaryColorBrush}"
+            BorderThickness="1"
+            CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Title Bar-->
+            <Border Grid.Row="0"
+                    Background="{StaticResource PrimaryColorBrush}"
+                    CornerRadius="10 10 0 0" MouseDown="Border_MouseDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                               Text="Money Tracker"
+                               FontWeight="Bold"
+                               Margin="10 0 0 0"
+                               VerticalAlignment="Center"
+                               Foreground="{StaticResource WhiteColorBrush}"
+                               FontSize="16"/>
+
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal">
+                        <Button Style="{StaticResource titleBarButton}" Click="MinimizeCommand">
+                            <TextBlock FontWeight="UltraBold">_</TextBlock>
+                        </Button>
+                        <Button Style="{StaticResource titleBarButton}" Click="MaximizeCommand">
+                            <TextBlock FontWeight="Bold">[ ]</TextBlock>
+                        </Button>
+                        <Button Style="{StaticResource titleBarCloseButton}" Click="CloseCommand">
+                            <TextBlock FontWeight="Bold">X</TextBlock>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!--Main Menu-->
+            <Border Grid.Row="1"
+                    Background="{StaticResource WhiteColorBrush}"
+                    CornerRadius="0 0 10 10">
+                <ContentControl Margin="10"
+                                Content="{Binding CurrentView}"/>
+            </Border>
+        </Grid>
+    </Border>
 </Window>

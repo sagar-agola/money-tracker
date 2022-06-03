@@ -6,7 +6,12 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Color.xaml" />
+                <ResourceDictionary Source="Styles/Button.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
             <!-- View Model Bindings -->
             <DataTemplate DataType="{x:Type viewModel:AddTransactionViewModel}">
                 <view:AddTransactionView />
