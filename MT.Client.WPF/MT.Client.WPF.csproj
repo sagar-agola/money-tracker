@@ -3,15 +3,11 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\" />
     <Folder Include="Styles\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

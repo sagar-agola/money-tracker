@@ -1,9 +1,19 @@
 ﻿<Application x:Class="MT.Client.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:MT.Client.WPF"
+             xmlns:viewModel="clr-namespace:MT.Client.WPF.ViewModels"
+             xmlns:view="clr-namespace:MT.Client.WPF.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            
+            <!-- View Model Bindings -->
+            <DataTemplate DataType="{x:Type viewModel:AddTransactionViewModel}">
+                <view:AddTransactionView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:TransactionListViewModel}">
+                <view:TransactionListView />
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
