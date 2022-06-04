@@ -9,7 +9,10 @@
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Color.xaml" />
+                <ResourceDictionary Source="Styles/BaseStyle.xaml" />
                 <ResourceDictionary Source="Styles/Button.xaml" />
+                <ResourceDictionary Source="Styles/InputControls.xaml" />
+                <ResourceDictionary Source="Styles/ListViewStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <!-- View Model Bindings -->

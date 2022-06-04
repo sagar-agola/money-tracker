@@ -45,13 +45,13 @@
 
                     <StackPanel Grid.Column="1"
                                 Orientation="Horizontal">
-                        <Button Style="{StaticResource titleBarButton}" Click="MinimizeCommand">
+                        <Button Style="{StaticResource TitleBarButton}" Click="MinimizeCommand">
                             <TextBlock FontWeight="UltraBold">_</TextBlock>
                         </Button>
-                        <Button Style="{StaticResource titleBarButton}" Click="MaximizeCommand">
+                        <Button Style="{StaticResource TitleBarButton}" Click="MaximizeCommand">
                             <TextBlock FontWeight="Bold">[ ]</TextBlock>
                         </Button>
-                        <Button Style="{StaticResource titleBarCloseButton}" Click="CloseCommand">
+                        <Button Style="{StaticResource TitleBarCloseButton}" Click="CloseCommand">
                             <TextBlock FontWeight="Bold">X</TextBlock>
                         </Button>
                     </StackPanel>

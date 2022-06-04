@@ -16,7 +16,10 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers().AddJsonOptions(jsonOptions =>
+        {
+            jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+        });
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(option =>

@@ -2,25 +2,53 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MT.Client.WPF.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModel="clr-namespace:MT.Client.WPF.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="500"
+             d:DataContext="{d:DesignInstance Type=viewModel:AddTransactionViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Text="Add Transaction view" />
-        <Button Grid.Column="1"
-                Margin="5 0 0 0"
-                Content="Back To List Page"
-                Command="{Binding CancelCommand}" />
+        <TextBlock Grid.Column="0"
+                   Grid.Row="0"
+                   Text="Amount"
+                   Style="{ StaticResource TextBlockLabel }" />
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{ StaticResource BaseTextBox }" />
+
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Margin="0 12 0 0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0"
+                    Style="{StaticResource OutlineButton}"
+                    Content="Save"
+                    Margin="0 0 6 0"
+                    Command="{Binding SaveCommand}" />
+
+            <Button Grid.Column="1"
+                    Style="{StaticResource OutlineButton}"
+                    Content="Cancel"
+                    Margin="6 0 0 0"
+                    Command="{Binding CancelCommand}" />
+        </Grid>
+        <TextBlock Grid.Row="3" Text="{Binding Amount}" />
     </Grid>
 </UserControl>

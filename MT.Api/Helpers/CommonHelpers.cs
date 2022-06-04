@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MT.Api.DataTransferModels.Pagination;
+using MT.Shared.DataTransferModels.Pagination;
 
 namespace MT.Api.Helpers;
 

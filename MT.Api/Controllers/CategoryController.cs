@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MT.Api.Database;
 using MT.Api.Database.Models;
-using MT.Api.DataTransferModels;
-using MT.Api.DataTransferModels.Category;
+using MT.Shared.DataTransferModels;
+using MT.Shared.DataTransferModels.Category;
 
 namespace MT.Api.Controllers;
 
