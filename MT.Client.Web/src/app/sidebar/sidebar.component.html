@@ -1,0 +1,26 @@
+<div class="sidebar-main-wrapper">
+  <div class="sidebar-header">
+    <div class="icon">
+      <i class="fa-solid fa-money-bill-trend-up"></i>
+    </div>
+    <div class="text">
+      Money Tracker
+    </div>
+  </div>
+  <div class="sidebar-menu-item">
+    <div class="icon">
+      <i class="fa-solid fa-money-bill-transfer"></i>
+    </div>
+    <a [routerLink]="['/transactions/']" routerLinkActive="router-link-active">
+      Transactions
+    </a>
+  </div>
+  <div class="sidebar-menu-item">
+    <div class="icon">
+      <i class="fa-solid fa-address-book"></i>
+    </div>
+    <a [routerLink]="['/categories/']" routerLinkActive="router-link-active">
+      Categories
+    </a>
+  </div>
+</div>

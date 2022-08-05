@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import './variables.scss';
+
+@font-face {
+  font-family: 'LucidaSansUnicode';
+  src: url('./assets/fonts/Lucida\ Sans\ Unicode.ttf')
+}
+
+*:not(.fa-solid):not(.fa) {
+  font-family: LucidaSansUnicode;
+}
+
+body {
+  font-size: 14px;
+  background-color: $primary-background-color;
+  color: $primary-color;
+}
