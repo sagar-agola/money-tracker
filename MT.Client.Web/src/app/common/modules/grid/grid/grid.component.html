@@ -1,17 +1,14 @@
-<b>It Works</b>
-<!-- <table>
+<table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Action</th>
+      <th *ngFor="let column of tableDefinition.columns">{{ column.displayName }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let category of foo">
-      <td>{{ category.hashId }}</td>
-      <td>{{ category.title }}</td>
-      <td></td>
+    <tr *ngFor="let item of tableDefinition.data">
+      <td *ngFor="let column of tableDefinition.columns">
+        {{ item[column.propertyName] }}
+      </td>
     </tr>
   </tbody>
-</table> -->
+</table>

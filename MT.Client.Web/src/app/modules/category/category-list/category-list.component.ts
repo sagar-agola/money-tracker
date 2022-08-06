@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TableDefinition } from 'src/app/common/modules/grid/models/table-definition.model';
 import { CategoryService } from '../category.service';
 import { Category } from '../models/category.model';
 
@@ -10,7 +11,14 @@ import { Category } from '../models/category.model';
 })
 export class CategoryListComponent implements OnInit {
 
-  categories: Category[] = [];
+  tableDefinition: TableDefinition<Category> = {
+    columns: [
+      { displayName: "Id", propertyName: "hashId", width: 50 },
+      { displayName: "Title", propertyName: "title", width: 50 }
+    ],
+    emptyTableText: "no records found",
+    data: []
+  };
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -22,14 +30,12 @@ export class CategoryListComponent implements OnInit {
   }
 
   getAllCategories(): void {
-    this.categories = [];
-    
     this.spinner.show();
     this._categoryService.GetAll().subscribe(response => {
       this.spinner.hide();
 
       if (response && response.length > 0) {
-        this.categories = response;
+        this.tableDefinition.data = response;
       }
     });
   }
