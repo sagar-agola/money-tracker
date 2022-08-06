@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ButtonModule} from 'primeng/button';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
@@ -15,8 +14,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    ButtonModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
