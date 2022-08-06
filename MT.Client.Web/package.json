@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.2.0",
+    "@angular/animations": "^12.2.16",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
@@ -22,6 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@syncfusion/ej2-angular-grids": "^20.2.40",
     "bootstrap": "^4.5.0",
+    "ngx-toastr": "^14.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

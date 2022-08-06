@@ -6,7 +6,7 @@ import { environment } from './environments/environment';
 
 import { registerLicense } from '@syncfusion/ej2-base';
 
-registerLicense('key');
+registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jX39ccHdQRGJYVEI=');
 
 if (environment.production) {
   enableProdMode();

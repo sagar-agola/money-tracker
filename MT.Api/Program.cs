@@ -1,4 +1,5 @@
-﻿using HashidsNet;
+﻿using System.Text.Json;
+using HashidsNet;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +19,10 @@ public class Program
 
         builder.Services.AddControllers().AddJsonOptions(jsonOptions =>
         {
-            jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+            jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
         });
+
+        #region Swagger
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(option =>
@@ -32,17 +35,46 @@ public class Program
             });
         });
 
-        builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-        builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+        #endregion
+
+        #region CORS
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("DevelopmentCorsPolicy", builder => builder
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+        });
+
+        #endregion
+
+        #region Database
 
         builder.Services.AddDbContext<MoneyTrackerDbContext>(option =>
         {
             option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).EnableSensitiveDataLogging();
         }, ServiceLifetime.Transient);
 
+        #endregion
+
+        #region MVC
+
+        builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+        builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+        #endregion
+
+        #region Utils
+
         builder.Services.AddSingleton<IHashids>(_ => new Hashids("E546C8DF278CD5931069B522E695D4F2", 11));
 
+        #endregion
+
         WebApplication app = builder.Build();
+
+        app.UseCors("DevelopmentCorsPolicy");
 
         if (app.Environment.IsDevelopment())
         {
