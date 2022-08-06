@@ -1,0 +1,40 @@
+@import 'src/style/variables.scss';
+
+table {
+  width: 100%;
+  
+  thead {
+    background-color: $grid-header-background-color;
+    
+
+    th {
+      padding: 1rem;
+
+      &:first-child {
+        border-top-left-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+      }
+    }
+  }
+
+  tbody {
+    background-color: $secondary-background-color;
+
+    td {
+      padding: .8rem 1rem;
+    }
+
+    &:last-child {
+      td:first-child {
+        border-bottom-left-radius: 5px;
+      }
+
+      td:last-child {
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}

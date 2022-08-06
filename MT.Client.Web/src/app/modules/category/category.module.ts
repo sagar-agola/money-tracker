@@ -3,6 +3,7 @@ import { SharedModule } from 'src/app/common/modules/shared.module';
 
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { GridModule } from 'src/app/common/modules/grid/grid.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
   ],
   imports: [
     SharedModule,
+    GridModule,
     CategoryRoutingModule
   ]
 })

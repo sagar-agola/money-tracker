@@ -17,7 +17,7 @@ export class CategoryService {
     private _baseService: BaseService
   ) { }
 
-  GetAll(): Observable<ApiResponse<Category> | null> {
-    return this._baseService.Get<ApiResponse<Category>>(this.baseUrl);
+  GetAll(): Observable<Category[] | null> {
+    return this._baseService.Get<Category[]>(this.baseUrl);
   }
 }
