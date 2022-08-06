@@ -25,6 +25,21 @@ table {
 
     td {
       padding: .8rem 1rem;
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: #FFF;
+        font-size: 1rem;
+
+        &.red {
+          color: $danger-color;
+        }
+      }
+
+      &.button-number-2 {
+        width: 112px;
+      }
     }
 
     &:last-child {

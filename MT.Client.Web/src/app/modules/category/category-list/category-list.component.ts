@@ -16,6 +16,22 @@ export class CategoryListComponent implements OnInit {
       { displayName: "Id", propertyName: "hashId", width: 50 },
       { displayName: "Title", propertyName: "title", width: 50 }
     ],
+    buttons: [
+      {
+        iconClass: "fa-pencil",
+        color: "white",
+        clickCallBack: (item: Category) => {
+          console.log(item);
+        }
+      },
+      {
+        iconClass: "fa-trash-can",
+        color: "red",
+        clickCallBack: (item: Category) => {
+          console.log(item);
+        }
+      }
+    ],
     emptyTableText: "no records found",
     data: []
   };

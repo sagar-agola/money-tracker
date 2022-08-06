@@ -2,12 +2,29 @@
   <thead>
     <tr>
       <th *ngFor="let column of tableDefinition.columns">{{ column.displayName }}</th>
+      <th *ngIf="tableDefinition.buttons.length > 0"></th>
     </tr>
   </thead>
   <tbody>
+    <tr *ngIf="tableDefinition.data.length == 0">
+      <td colspan="100%">
+        {{ tableDefinition.emptyTableText }}
+      </td>
+    </tr>
     <tr *ngFor="let item of tableDefinition.data">
       <td *ngFor="let column of tableDefinition.columns">
         {{ item[column.propertyName] }}
+      </td>
+      <td *ngIf="tableDefinition.buttons.length > 0" class="button-number-{{ tableDefinition.buttons.length }}">
+        <ng-container *ngFor="let button of tableDefinition.buttons">
+          <button
+            class="btn-action {{ button.color }} mx-1"
+            *ngIf="!button.ngIfCallBack || button.ngIfCallBack(item)"
+            (click)="button.clickCallBack(item)">
+            <i *ngIf="button.iconClass" class="fa-solid {{button.iconClass}} mr-1"></i>
+            <span *ngIf="button.text" class="ml-1">{{ button.text }}</span>
+          </button>
+        </ng-container>
       </td>
     </tr>
   </tbody>
