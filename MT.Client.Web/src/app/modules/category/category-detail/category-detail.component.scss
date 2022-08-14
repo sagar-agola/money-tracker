@@ -1,0 +1,46 @@
+@import "src/style/variables.scss";
+
+.main-background {
+  background-color: $secondary-background-color;
+  padding: 1rem;
+  border-radius: $corner-radius-half;
+
+  .e-btn-group {
+    width: 100%;
+    
+    .e-btn {
+      width: 50%;
+      box-shadow: none;
+      border: 1px solid #FFF;
+      background-color: $primary-background-color;
+      color: #FFF;
+      padding: .375rem 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0;
+      
+      &:first-child {
+        border-top-left-radius: $corner-radius-bootstrap;
+        border-bottom-left-radius: $corner-radius-bootstrap;
+      }
+
+      &:last-child {
+        border-top-right-radius: $corner-radius-bootstrap;
+        border-bottom-right-radius: $corner-radius-bootstrap;
+      }
+
+      &.checked {
+        background-color: #FFF;
+        color: $grid-header-background-color;
+      }
+    }
+  }
+
+  .icon-picker {
+    background-color: $secondary-background-color !important;
+  }
+
+  .ip-button-icon {
+    background-color: $primary-background-color !important;
+  }
+}

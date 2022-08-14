@@ -1,4 +1,7 @@
+import { TransactionTypeEnum } from "../../transaction/models/transaction-type.enum";
+
 export interface Category {
-  hashId: number;
-  title: string;
+  hashId?: number;
+  type?: TransactionTypeEnum;
+  title?: string;
 };

@@ -1,2 +1,8 @@
-
+<div class="d-flex justify-content-between mb-3">
+  <h4 class="my-auto">Categories</h4>
+  <button class="btn btn-success" [routerLink]="['/categories/add']">
+    <i class="fa-solid fa-plus mr-2"></i>
+    Add New Category
+  </button>
+</div>
 <app-grid [tableDefinition]="tableDefinition"></app-grid>

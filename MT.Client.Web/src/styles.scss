@@ -7,6 +7,9 @@
 
 @import './style/grid.scss';
 
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+
 @font-face {
   font-family: 'LucidaSansUnicode';
   src: url('./assets/fonts/Lucida\ Sans\ Unicode.ttf')
@@ -22,4 +25,13 @@ body {
   color: $primary-color;
 }
 
+input {
+  background-color: $primary-background-color !important;
+  color: #FFF !important;
 
+  &:focus {
+    border-color: $secondary-color !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
